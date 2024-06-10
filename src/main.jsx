@@ -12,6 +12,7 @@ import RegisterPages from "./pages/RegisterPages.jsx";
 import LoginPages from "./pages/LoginPages.jsx";
 import SinglePostPages from "./pages/SinglePostPages.jsx";
 import DashboardPages from "./pages/DashboardPages.jsx";
+import HtmlEditor from "./pages/CreateForumPages.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
     path: "/question/:id",
     element: <SinglePostPages />,
   },
+  {
+    path: "/createforum",
+    element: <HtmlEditor />,
+  },
 ]);
 
 const App = () => {
@@ -59,5 +64,5 @@ const App = () => {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 );

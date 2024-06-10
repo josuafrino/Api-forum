@@ -4,12 +4,12 @@ import { getForum } from "../../../api/forumApi.js";
 import Button from "../../atoms/Button/index.jsx";
 import { forumValidationSchema } from "../../../utils/forumvalidation.js";
 import * as yup from "yup";
+import HtmlEditor from "../../../pages/CreateForumPages.jsx";
 
 export default function CreateForm() {
   const [formValues, setFormValues] = useState({
-    title: "",
-    content: "",
-    tags: "",
+    name: "",
+    description: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -50,10 +50,10 @@ export default function CreateForm() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <InputForm htmlFor={"title"} id={"title"} name={"title"} label={"Title"} type={"text"} placeholder={"Forum post title"} value={formValues.title} onChange={handleChange} error={errors.title} />
-        <InputForm htmlFor={"content"} id={"content"} name={"content"} label={"Content"} placeholder={"Write your post here..."} value={formValues.content} onChange={handleChange} error={errors.content} />
-        <InputForm htmlFor={"tags"} id={"tags"} name={"tags"} label={"Tags"} type={"text"} placeholder={"Comma-separated tags"} value={formValues.tags} onChange={handleChange} error={errors.tags} />
+        <InputForm htmlFor={"name"} id={"name"} name={"name"} label={"name"} type={"text"} placeholder={"Forum post title"} value={formValues.title} onChange={handleChange} error={errors.title} />
+        <InputForm htmlFor={"description"} id={"description"} name={"description"} label={"description"} placeholder={"Write your post here..."} value={formValues.content} onChange={handleChange} error={errors.content} />
         <Button variant={"primary"} type={"submit"} children={"Create Post"} className="mt-1 w-100 rounded-3" />
+        <HtmlEditor />
       </form>
     </>
   );

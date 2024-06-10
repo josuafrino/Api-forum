@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Button from "../components/atoms/Button";
 import { useQuill } from "react-quilljs";
 import "quill/dist/quill.snow.css";
+import Button from "../components/atoms/Button";
 
-export default function HtmlEditor() {
+function HtmlEditor() {
   const modules = {
     toolbar: [
       [{ size: ["small", false, "large", "huge"] }],
@@ -37,7 +37,11 @@ export default function HtmlEditor() {
       <div style={{ width: 750, height: 500 }}>
         <div ref={quillRef} />
       </div>
-      <Button variant="primary">View</Button>
+      <div>
+        <Button variant="primary">Click</Button>
+      </div>
     </div>
   );
 }
+
+export default HtmlEditor;
